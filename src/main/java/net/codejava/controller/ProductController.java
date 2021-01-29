@@ -1,5 +1,6 @@
 package net.codejava.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,8 +65,11 @@ public class ProductController {
     }
     
     @RequestMapping("/searchproduct/")
-    public String searchNewProductPage(@RequestParam(name = "id") int id) {
-        service.find(id);
+    public String searchNewProductPage(@RequestParam(name = "id") int id,Model model) {
+        Product p=service.find(id);
+        List<Product> products =new ArrayList<>();
+        products.add(p);
+        model.addAttribute("listProducts", products);
         return "view_product";
     }
 

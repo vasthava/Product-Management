@@ -32,8 +32,13 @@ public class ProductService {
         repo.deleteById(id);
     }
 
-	public void find(long id) {
+	public Product find(long id) {
 		// TODO Auto-generated method stub
-		repo.findById(id);
+		if(repo.findById(id).isPresent()) {
+			return repo.findById(id).get();
+		}
+		else {
+			return new Product();
+		}
 	}
 }

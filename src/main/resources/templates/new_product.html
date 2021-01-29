@@ -23,7 +23,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand">Product Management</a>
+				<a class="navbar-brand" href="/">Product Management</a>
 			</div>
 		</div>
 	</nav>
@@ -43,23 +43,31 @@
  
             <table border="0" cellpadding="10">
                 <tr>
-                    <td>Product Name:</td>
-                    <td><input type="text" th:field="*{name}" /></td>
+                <div class = "form-group">
+					<label for ="username"> Product Name </label> :
+                    <input type="text" class = "form-control" th:field="*{name}" style="width:50%" />
+                    </div>
                 </tr>
                 <tr>
-                    <td>Brand:</td>
-                    <td><input type="text" th:field="*{brand}" /></td>
+                 <div class = "form-group">
+					<label for ="username"> Brand </label> :
+                    <input type="text" th:field="*{brand}" class = "form-control" style="width:50%"   />
+                </div>
                 </tr>
                 <tr>
-                    <td>Made In:</td>
-                    <td><input type="text" th:field="*{madein}" /></td>
+                     <div class = "form-group">
+					<label for ="username"> Made In </label> :
+                    <input type="text" th:field="*{madein}" class = "form-control" style="width:50%" />
+                </div>
                 </tr>
                 <tr>
-                    <td>Price:</td>
-                    <td><input type="text" th:field="*{price}" /></td>
+                    <div class = "form-group">
+					<label for ="username"> Price </label> :
+                    <input type="text" th:field="*{price}" class = "form-control" style="width:50%" />
+                    </div>
                 </tr>                    
                 <tr>
-                    <td colspan="2"><button type="submit">Save</button> </td>
+                    <td colspan="2"><button type="submit" class="btn btn-success">Save</button> </td>
                 </tr>
             </table>
         </form>
