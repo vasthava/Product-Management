@@ -1,9 +1,22 @@
 package net.codejava.web.dto;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class UserRegistrationDto {
+
+	@NotNull(message = "FirstName can not be null!!")
+    @NotEmpty(message = "FirstName can not be empty!!")
 	private String firstName;
+
+    @NotNull(message = "LastName can not be null!!")
+    @NotEmpty(message = "LastName can not be empty!!")
 	private String lastName;
+    @Email(message="Invalid Email")
 	private String email;
+    @NotNull(message = "Password can not be null!!")
+    @NotEmpty(message = "Password can not be empty!!")
 	private String password;
 	
 	public UserRegistrationDto(){
